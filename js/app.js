@@ -766,7 +766,7 @@ function renderAIChat(mount, compact = false) {
       };
 
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/future-ai/chat", {
+        const response = await fetch("https://contai-back.onrender.com/api/future-ai/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
@@ -796,7 +796,7 @@ function renderAIChat(mount, compact = false) {
         currentChat.messages.push({
           id: `assistant-${Date.now()}`,
           role: "assistant",
-          text: "Desculpe, não foi possível conectar ao backend. Verifique se o servidor está funcionando em http://127.0.0.1:8000",
+          text: "Desculpe, não foi possível conectar ao backend. Verifique se o servidor está funcionando em https://contai-back.onrender.com/",
         });
         saveAIChats(currentChats);
         renderMessages();
